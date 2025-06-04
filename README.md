@@ -1,364 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Venezuela</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <title>Venezuela - Cultura, Gastronomía, Lugares y Naturaleza</title>
   <style>
     body {
-      background-image: url('imagenes/bandera.jpg');
+      background-image: url('https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/bandera.jpg');
       background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
       color: white;
       font-family: Arial, sans-serif;
-      padding: 20px;
+      margin: 0;
+      padding: 0 20px;
     }
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .imagen {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 20px auto;
-    }
-    .regresar {
+    header {
+      background-color: rgba(0,0,0,0.7);
+      padding: 15px 20px;
       display: flex;
       align-items: center;
     }
-    .regresar img {
-      width: 30px;
-      margin-right: 10px;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      width: 40px;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      border-bottom: 2px solid white;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    section img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: rgba(0,0,0,0.7);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="venezuela3.html">Inicio</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="gastronomia.html">Gastronomía</a>
-    <a href="naturaleza.html">Naturaleza</a>
-    <a href="lugares.html">Lugares</a>
-  </nav>
 
-  <div class="regresar">
-    <a href="venezuela.html"><img src="imagenes/flecha-izquierda.png" alt="Regresar"></a>
-    <h1>Bienvenidos a Venezuela</h1>
-  </div>
+  <header>
+    <h1>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/venezuela_paisaje.jpg" alt="Regresar" onclick="window.history.back()" />
+      Venezuela
+    </h1>
+    <nav>
+      <a href="#cultura">Cultura</a>
+      <a href="#gastronomia">Gastronomía</a>
+      <a href="#lugares">Lugares Turísticos</a>
+      <a href="#naturaleza">Naturaleza</a>
+    </nav>
+  </header>
 
-  <img src="imagenes/venezuela_paisaje.jpg" alt="Paisaje venezolano" class="imagen">
+  <main>
+    <section id="cultura">
+      <h2>Cultura Venezolana</h2>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/baile_llanero.jpg" alt="Cultura Venezolana" />
+      <p>
+        La cultura venezolana es un rico mosaico de tradiciones, costumbres y expresiones artísticas que reflejan la diversidad de su gente y su historia. Desde las influencias indígenas originarias, pasando por la herencia española, hasta las aportaciones africanas y europeas, la identidad cultural de Venezuela se ha construido a lo largo de siglos de convivencia y mezcla de pueblos. La música tradicional, como el joropo, es uno de los pilares fundamentales de la cultura nacional, con su ritmo alegre y sus instrumentos típicos que animan festivales y celebraciones en todo el país. Además, la danza, el teatro y la literatura venezolana han sido manifestaciones vitales para expresar la realidad social, política y emocional de sus habitantes. La gastronomía, las festividades religiosas y populares, y las artesanías, como la elaboración de sombreros y tejidos, también forman parte esencial de esta riqueza cultural. En las ciudades y en el campo, la cultura venezolana se vive día a día a través de la familia, las tradiciones orales y los eventos comunitarios, que mantienen viva la memoria colectiva y el sentido de pertenencia. La pluralidad lingüística, con la presencia de lenguas indígenas, es otro aspecto relevante que contribuye a la diversidad cultural. En suma, la cultura de Venezuela es un reflejo de su historia compleja y de la creatividad de su pueblo, que sigue evolucionando y adaptándose en un mundo globalizado sin perder sus raíces profundas.
+      </p>
+    </section>
+    <section id="gastronomia">
+      <h2>Gastronomía Venezolana</h2>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/arepas.jpg" alt="Gastronomía Venezolana" />
+      <p>
+        La gastronomía venezolana es un deleite para los sentidos, caracterizada por su variedad y sabor que refleja la diversidad geográfica y cultural del país. Platos emblemáticos como las arepas, las hallacas, el pabellón criollo, las empanadas y el asado negro representan la fusión de ingredientes autóctonos con técnicas culinarias traídas por los colonizadores y adaptadas a lo largo del tiempo. La arepa, hecha de masa de maíz, es un símbolo nacional y se consume en múltiples variantes y preparaciones, ya sea rellena de queso, carne, pollo o vegetales. Las hallacas, típicas de la temporada navideña, reúnen una mezcla compleja de ingredientes dentro de una masa envuelta en hojas de plátano, reflejando la diversidad regional. Además, la gastronomía venezolana se enriquece con frutas tropicales como el mango, la guayaba y la parchita, y con una amplia variedad de platos a base de pescado y mariscos, especialmente en las regiones costeras. Las tradiciones culinarias no solo nutren el cuerpo sino que también fortalecen los lazos familiares y sociales, pues muchas recetas se transmiten de generación en generación. Los mercados y festivales gastronómicos permiten a los venezolanos y visitantes conocer la riqueza culinaria del país, mostrando además cómo la comida es parte fundamental de la identidad nacional.
+      </p>
+    </section>
+    <section id="lugares">
+      <h2>Lugares Turísticos de Venezuela</h2>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/morrocoy.jpg" alt="Lugares Turísticos de Venezuela" />
+      <p>
+        Venezuela cuenta con una amplia gama de lugares turísticos que cautivan a visitantes nacionales e internacionales gracias a su belleza natural, su historia y su cultura. Entre ellos, destacan el Salto Ángel, la cascada más alta del mundo, ubicada en el Parque Nacional Canaima, un sitio declarado Patrimonio de la Humanidad por la UNESCO. La Gran Sabana, con sus impresionantes tepuyes y paisajes únicos, ofrece experiencias de aventura y contacto con la naturaleza. Las playas del Caribe venezolano, como las de Los Roques y Morrocoy, son paradisíacas y conocidas por sus aguas cristalinas y arenas blancas, ideales para el ecoturismo y el buceo. Las ciudades coloniales como Coro y su casco histórico, Patrimonio Cultural, permiten al visitante explorar la arquitectura y la historia del país. Además, la ciudad de Mérida, con su teleférico, uno de los más largos y altos del mundo, es un centro de turismo de montaña y actividades al aire libre. Estos destinos, junto con muchos otros, hacen de Venezuela un país con un potencial turístico inmenso que combina naturaleza, cultura y aventura en cada rincón.
+      </p>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/salto_angel.jpg" alt="Salto Ángel" style="margin-top:20px;"/>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/tepuy_roraima.jpg" alt="Tepuy Roraima" style="margin-top:20px;"/>
+    </section>
+    <section id="naturaleza">
+      <h2>Naturaleza Venezolana</h2>
+      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/venezuela_paisaje.jpg" alt="Naturaleza en Venezuela" />
+      <p>
+        La naturaleza venezolana es una de las más diversas y exuberantes del planeta, gracias a su ubicación geográfica y su variedad de ecosistemas. El país alberga selvas tropicales, montañas andinas, llanuras, desiertos, manglares, y extensas costas en el Caribe y el Atlántico. Esta riqueza biológica se refleja en su flora y fauna, con numerosas especies endémicas y protegidas, que habitan en parques nacionales y reservas naturales. La biodiversidad venezolana incluye desde el majestuoso jaguar y la guacamaya hasta plantas medicinales usadas por comunidades indígenas. Los ríos como el Orinoco son vitales para el equilibrio ambiental y para la vida de miles de comunidades. La conservación de estos espacios naturales es fundamental para mantener el equilibrio ecológico y el bienestar de futuras generaciones. Además, el contacto con la naturaleza es una fuente de inspiración y bienestar para los venezolanos, quienes disfrutan de actividades al aire libre como senderismo, avistamiento de aves y turismo ecológico. La naturaleza venezolana no solo es patrimonio nacional, sino también un legado invaluable para el mundo.
+      </p>
+    </section>
+  </main>
 
-  <p>Venezuela es un país con una rica diversidad cultural, geográfica y natural. Está en el norte de América del Sur y limita con Colombia, Brasil, Guyana y el mar Caribe.</p>
-  <p>Su capital es Caracas, una ciudad con una mezcla de arquitectura colonial y moderna, y un centro importante de economía, cultura y política.</p>
-  <p>La historia de Venezuela está marcada por su lucha por la independencia, liderada por Simón Bolívar, el Libertador de varios países latinoamericanos.</p>
-  <p>Fue una de las primeras naciones en independizarse de España en el siglo XIX, lo que consolidó un fuerte sentido de identidad nacional.</p>
-  <p>En cuanto a su geografía, posee playas tropicales, selvas amazónicas, llanuras extensas y altas montañas andinas cubiertas de nieve.</p>
-  <p>El Salto Ángel, con casi 1000 metros de altura, es la cascada más alta del mundo y está en el Parque Nacional Canaima, Patrimonio de la Humanidad.</p>
-  <p>El país también es rico en biodiversidad, albergando especies únicas de animales y plantas que no se encuentran en ninguna otra parte del mundo.</p>
-  <p>Venezuela ha tenido una economía basada principalmente en el petróleo, siendo uno de los países con mayores reservas del planeta.</p>
-  <p>Aunque ha enfrentado crisis económicas, sigue siendo un país de gran potencial en turismo, agricultura, y minería.</p>
-  <p>Su gastronomía es tan diversa como su gente, con platos típicos como las arepas, el pabellón criollo y las hallacas navideñas.</p>
-  <p>En música, destacan géneros como el joropo, la gaita zuliana y el calipso, los cuales son interpretados durante festividades regionales.</p>
-  <p>Los venezolanos son conocidos por su hospitalidad, alegría, creatividad y resiliencia ante los desafíos que han enfrentado como nación.</p>
-  <p>Las regiones naturales del país—llanos, Andes, costa, selva y sabana—tienen cada una tradiciones, comidas y costumbres propias.</p>
-  <p>El turismo interno e internacional se enfoca en destinos como Los Roques, Canaima, la Isla de Margarita y la cordillera andina.</p>
-  <p>El país también destaca en deportes, con figuras reconocidas en béisbol, fútbol, boxeo y atletismo a nivel internacional.</p>
-  <p>Venezuela ha desarrollado una rica cultura artística con escritores, músicos, pintores y cineastas de reconocimiento mundial.</p>
-  <p>Instituciones como el Sistema Nacional de Orquestas Juveniles e Infantiles han sido aplaudidas en todo el mundo por su impacto social y cultural.</p>
-  <p>Venezuela sigue siendo un país de contrastes: con grandes riquezas naturales y culturales, pero también con importantes retos sociales y económicos.</p>
-  <p>La juventud juega un papel fundamental en la construcción del futuro venezolano, apostando por la educación y el emprendimiento.</p>
-  <p>Venezuela es, en esencia, una nación llena de vida, de esperanza y de belleza que espera ser redescubierta y valorada.</p>
-<p> 
-<p> GIOVANNA OLVERA
-</body>
-</html>
+  <footer>
+    <p>Creado por Giovanna Olvera</p>
+  </footer>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Naturaleza de Venezuela</title>
-  <link rel="stylesheet" href="estilos.css">
-  <style>
-    body {
-      background-image: url('imagenes/bandera.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .imagen {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 20px auto;
-    }
-    .regresar {
-      display: flex;
-      align-items: center;
-    }
-    .regresar img {
-      width: 30px;
-      margin-right: 10px;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="venezuela3.html">Inicio</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="gastronomia.html">Gastronomía</a>
-    <a href="naturaleza.html">Naturaleza</a>
-    <a href="lugares.html">Lugares</a>
-  </nav>
-
-  <div class="regresar">
-    <a href="gastronomia.html"><img src="imagenes/flecha-izquierda.png" alt="Regresar"></a>
-    <h1>Naturaleza de Venezuela</h1>
-  </div>
-
-  <img src="imagenes/morrocoy.jpg" alt="Parque Nacional Morrocoy" class="imagen">
-
-  <p>Venezuela es uno de los países más biodiversos del mundo. Desde montañas nevadas hasta playas tropicales, su riqueza natural es impresionante.</p>
-  <p>El Parque Nacional Canaima es Patrimonio de la Humanidad. Alberga el Salto Ángel, la cascada más alta del mundo, y paisajes de tepuyes únicos.</p>
-  <p>El Parque Nacional Morrocoy ofrece cayos, arrecifes y manglares ideales para el ecoturismo. Es un paraíso de aguas cristalinas en Falcón.</p>
-  <p>La Gran Sabana, al sur del país, combina selvas, sabanas y formaciones rocosas milenarias. Es hogar de especies endémicas y culturas indígenas.</p>
-  <p>Los Andes venezolanos, con picos como el Bolívar, son ideales para el senderismo y el turismo de altura. Sus paisajes montañosos son espectaculares.</p>
-  <p>En los Llanos, extensas planicies inundan en época de lluvias, creando hábitats para aves, caimanes, anacondas y capibaras.</p>
-  <p>El Parque Nacional Henri Pittier, en Aragua, protege más de 500 especies de aves, además de playas y bosques nublados.</p>
-  <p>La región del Delta del Orinoco es un extenso laberinto de canales donde viven comunidades indígenas Warao y una fauna riquísima.</p>
-  <p>El lago de Maracaibo, el más grande de Sudamérica, genera el fenómeno del Relámpago del Catatumbo, con tormentas eléctricas casi constantes.</p>
-  <p>El Parque Nacional El Ávila, o Waraira Repano, es un pulmón verde entre Caracas y el mar. Tiene senderos, flora endémica y vistas asombrosas.</p>
-  <p>Las costas venezolanas están bordeadas por el mar Caribe, con playas como Cuyagua, Choroní y Mochima, ideales para el surf y el buceo.</p>
-  <p>En la región amazónica, al sur, se encuentran bosques tropicales con ríos como el Ventuari y una biodiversidad incomparable.</p>
-  <p>Los ecosistemas del país son variados y frágiles. La conservación es clave para proteger su riqueza natural para futuras generaciones.</p>
-<p>
-<p> GIOVANNA OLVERA
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Lugares turísticos de Venezuela</title>
-  <link rel="stylesheet" href="estilos.css">
-  <style>
-    body {
-      background-image: url('imagenes/bandera.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .imagen {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 20px auto;
-    }
-    .regresar {
-      display: flex;
-      align-items: center;
-    }
-    .regresar img {
-      width: 30px;
-      margin-right: 10px;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="venezuela3.html">Inicio</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="gastronomia.html">Gastronomía</a>
-    <a href="naturaleza.html">Naturaleza</a>
-    <a href="lugares.html">Lugares</a>
-  </nav>
-
-  <div class="regresar">
-    <a href="naturaleza.html"><img src="imagenes/flecha-izquierda.png" alt="Regresar"></a>
-    <h1>Lugares turísticos de Venezuela</h1>
-  </div>
-
-  <img src="imagenes/salto_angel.jpg" alt="Tepuy Roraima" class="imagen">
-
-  <p>Venezuela ofrece una gran variedad de destinos turísticos, desde playas paradisíacas hasta montañas y desiertos espectaculares.</p>
-  <p>El Tepuy Roraima, en la frontera con Brasil y Guyana, es una formación geológica impresionante que inspiró películas como "Up".</p>
-  <p>La Isla de Margarita, conocida como "La Perla del Caribe", es famosa por sus playas, centros comerciales y vida nocturna.</p>
-  <p>Los Médanos de Coro son un desierto de dunas móviles en el estado Falcón. Su paisaje es único en Sudamérica.</p>
-  <p>El Teleférico de Mérida, el más alto y largo del mundo, ofrece vistas espectaculares de los Andes venezolanos.</p>
-  <p>Choroní y Cuyagua, en el estado Aragua, combinan playas, montañas y cultura colonial. Son muy populares entre los turistas.</p>
-  <p>Ciudad Bolívar es una ciudad histórica a orillas del río Orinoco, con arquitectura colonial y museos sobre la independencia.</p>
-  <p>Canaima es un destino imperdible. Sus lagunas, selvas y el Salto Ángel hacen de este parque nacional una maravilla natural.</p>
-  <p>Los Roques es un archipiélago coralino de ensueño, con aguas turquesa y arenas blancas, ideal para el ecoturismo y deportes acuáticos.</p>
-  <p>El estado Amazonas alberga comunidades indígenas, ríos caudalosos y selvas vírgenes. Es una aventura para los amantes de la naturaleza.</p>
-  <p>Puerto La Cruz y Mochima ofrecen un hermoso litoral con playas, islas y cuevas marinas para explorar.</p>
-  <p>Barquisimeto destaca por su cultura musical, la flor de Venezuela y su moderna catedral.</p>
-  <p>Caracas, la capital, mezcla historia, modernidad, museos, parques y miradores como el del Ávila.</p>
-<p>
-<p> GIOVANNA OLVERA
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Gastronomía de Venezuela</title>
-  <link rel="stylesheet" href="estilos.css">
-  <style>
-    body {
-      background-image: url('imagenes/bandera.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .imagen {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 20px auto;
-    }
-    .regresar {
-      display: flex;
-      align-items: center;
-    }
-    .regresar img {
-      width: 30px;
-      margin-right: 10px;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="venezuela3.html">Inicio</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="gastronomia.html">Gastronomía</a>
-    <a href="naturaleza.html">Naturaleza</a>
-    <a href="lugares.html">Lugares</a>
-  </nav>
-
-  <div class="regresar">
-    <a href="cultura.html"><img src="imagenes/flecha-izquierda.png" alt="Regresar"></a>
-    <h1>Gastronomía de Venezuela</h1>
-  </div>
-
-  <img src="imagenes/arepas.jpg" alt="Arepas venezolanas" class="imagen">
-
-  <p>La gastronomía de Venezuela es reflejo de su diversidad cultural, con ingredientes indígenas, africanos y europeos. Cada plato tiene historia y sabor.</p>
-  <p>Las arepas son el símbolo nacional. Pueden rellenarse con queso, jamón, carne mechada, caraotas, perico (huevo con tomate y cebolla), entre otros.</p>
-  <p>El pabellón criollo, plato emblemático, incluye arroz blanco, carne desmechada, caraotas negras y tajadas de plátano maduro.</p>
-  <p>Las hallacas son infaltables en diciembre. Se preparan con masa de maíz, guiso de carne, aceitunas, alcaparras y pasas, envueltas en hojas de plátano.</p>
-  <p>En los Andes, se disfruta la pizca andina, una sopa caliente con papa, leche, huevo y cilantro. Perfecta para el frío de la montaña.</p>
-  <p>El asado negro es una carne de res cocida lentamente en una salsa oscura y dulce hecha a base de papelón. Es muy apreciado en celebraciones.</p>
-  <p>La cachapa es una torta de maíz dulce servida con queso de mano, ideal para desayunos o meriendas.</p>
-  <p>En la región oriental destacan los pescados y mariscos. El pastel de chucho, típico de Margarita, combina pescado con plátano maduro.</p>
-  <p>La carne en vara, típica de los llanos, se cocina sobre brasas y se acompaña con yuca y guasacaca.</p>
-  <p>Los sancochos son sopas muy completas hechas con carnes, verduras y tubérculos, ideales para reuniones familiares.</p>
-  <p>Entre los postres más conocidos están el quesillo (similar al flan), el bienmesabe (con coco), la torta de pan y los golfeados (dulces enrollados).</p>
-  <p>Las bebidas tradicionales incluyen la chicha criolla (a base de arroz), el papelón con limón, el cocuy (licor de agave) y el tizana (refresco de frutas).</p>
-  <p>En cada estado del país, se conservan recetas propias. La cocina venezolana es rica en sabores, texturas y colores que encantan a locales y visitantes.</p>
-  <p>El desayuno venezolano es abundante. Además de arepas y empanadas, se disfruta de cachitos (pan con jamón), pastelitos y jugos naturales.</p>
-<p>
-<p> GIOVANNA OLVERA
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Cultura de Venezuela</title>
-  <link rel="stylesheet" href="estilos.css">
-  <style>
-    body {
-      background-image: url('imagenes/bandera.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    nav a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .imagen {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 20px auto;
-    }
-    .regresar {
-      display: flex;
-      align-items: center;
-    }
-    .regresar img {
-      width: 30px;
-      margin-right: 10px;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="venezuela3.html">Inicio</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="gastronomia.html">Gastronomía</a>
-    <a href="naturaleza.html">Naturaleza</a>
-    <a href="lugares.html">Lugares</a>
-  </nav>
-
-  <div class="regresar">
-    <a href="venezuela.html"><img src="imagenes/flecha-izquierda.png" alt="Regresar"></a>
-    <h1>Cultura de Venezuela</h1>
-  </div>
-
-  <img src="imagenes/baile_llanero.jpg" alt="Baile llanero" class="imagen">
-
-  <p>La cultura venezolana es una fusión de elementos indígenas, africanos y europeos. Esta mezcla se refleja en su música, danzas, gastronomía, vestimenta y festividades.</p>
-  <p>El joropo es la música tradicional más representativa. Se acompaña con cuatro, maracas y arpa. El baile representa la vida llanera y es símbolo nacional.</p>
-  <p>Las fiestas populares como la Feria de la Chinita, los Diablos Danzantes de Yare y el Carnaval de El Callao son celebraciones llenas de color y tradición.</p>
-  <p>Los trajes típicos varían: el liquiliqui es común en los llanos, mientras en la región oriental predominan los vestidos floreados.</p>
-  <p>El arte venezolano ha sido influenciado por el modernismo y el arte cinético. Destacan artistas como Jesús Soto, Cruz-Diez y Armando Reverón.</p>
-  <p>Las leyendas y mitos son parte del folclore: La Sayona, El Silbón y La Llorona forman parte de la tradición oral.</p>
-  <p>La literatura venezolana es rica y diversa. Autores como Andrés Bello, Rómulo Gallegos y Teresa de la Parra han dejado huella.</p>
-  <p>La religiosidad se manifiesta en festividades católicas, pero también en prácticas sincréticas afrodescendientes como María Lionza.</p>
-  <p>El cine venezolano ha ganado reconocimiento con películas como “Pelo Malo” y “Desde allá”.</p>
-  <p>Las artes escénicas, como el teatro y la danza contemporánea, han cobrado importancia en Caracas y otras ciudades.</p>
-  <p>La arquitectura combina elementos coloniales, modernos y autóctonos, reflejando la evolución histórica del país.</p>
-  <p>En la educación se fomenta el estudio de las raíces culturales como parte de la identidad nacional.</p>
-  <p>Las comunidades indígenas conservan tradiciones, lenguas y rituales que enriquecen la cultura venezolana.</p>
-  <p>La música popular contemporánea también mezcla géneros tradicionales con pop, rock o reguetón, en artistas emergentes.</p>
-  <p>Venezuela es un país profundamente creativo, donde la cultura es una forma de resistencia, orgullo y celebración.</p>
-<p>
-<p> GIOVANNA OLVERA
 </body>
 </html>
