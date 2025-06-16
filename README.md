@@ -63,6 +63,23 @@
             max-width: 900px;
             padding: 0 15px;
         }
+        .content-section ul {
+            text-align: left;
+            max-width: 900px;
+            padding: 0 15px 0 40px;
+            margin: 10px auto;
+            color: white; /* Asegura que las listas sean blancas */
+        }
+        .content-section ol {
+            text-align: left;
+            max-width: 900px;
+            padding: 0 15px 0 40px;
+            margin: 10px auto;
+            color: white; /* Asegura que las listas sean blancas */
+        }
+        .content-section li {
+            margin-bottom: 8px;
+        }
         .content-section img, .content-section video {
             max-width: 90%;
             height: auto;
@@ -132,16 +149,39 @@
         }
         /* Canva Section */
         #canva {
-            background: linear-gradient(to bottom right, #1a237e, #8e24aa);
+            background: linear-gradient(to bottom right, #1a237e, #8e24aa); /* Degradado azul y morado */
+            color: white; /* Asegura que el texto sea blanco */
         }
         #canva h1 {
             font-size: 2.5em;
-            color: #00bcd4;
+            color: #b3e5fc; /* Azul claro para títulos */
         }
         #canva h2 {
             font-size: 2em;
-            color: #00bcd4;
+            color: #ce93d8; /* Morado claro para subtítulos */
         }
+        #canva a {
+            color: #00e0ff; /* Color para enlaces en sección Canva */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #canva a:hover {
+            text-decoration: underline;
+        }
+        #canva .uso-imagenes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        #canva .uso-imagenes img {
+            max-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
         /* Mentimeter Section */
         #mentimeter {
             background-color: #939393;
@@ -156,7 +196,6 @@
         }
         /* Genially Section */
         #genially {
-            /* Ruta de fondo, asegurando que logo-genially.png esté en la raíz del repositorio */
             background-image: url("https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-genially.png");
             background-size: cover;
             background-position: center;
@@ -203,6 +242,9 @@
             h2 {
                 font-size: 1.5em !important;
             }
+            .content-section ul, .content-section ol {
+                padding: 0 10px 0 25px; /* Ajusta padding en móviles */
+            }
         }
         @media (max-width: 480px) {
             #portada h1 {
@@ -219,6 +261,9 @@
             #aplicaciones .logos {
                 flex-direction: column;
                 align-items: center;
+            }
+            #canva .uso-imagenes img {
+                max-width: 90%; /* Hace las imágenes de uso más responsivas */
             }
         }
     </style>
@@ -251,9 +296,44 @@
     </div>
     <div id="canva" class="content-section">
         <h1>¿Qué es Canva?</h1>
-        <p>Canva es una plataforma de diseño gráfico en línea que permite crear contenidos visuales de manera sencilla. Desde presentaciones hasta carteles y posts para redes sociales.</p>
+        <p>Canva es una plataforma de diseño gráfico en línea, intuitiva y fácil de usar, que permite a personas de todos los niveles de habilidad crear una amplia variedad de diseños visuales. Desde presentaciones y documentos hasta gráficos para redes sociales, carteles, invitaciones y mucho más.</p>
         <h2>¿Para qué sirve?</h2>
-        <p>Permite a cualquier persona sin conocimientos de diseño crear material visual profesional con plantillas prediseñadas.</p>
+        <p>Canva sirve para simplificar el proceso de diseño gráfico. Ofrece miles de plantillas prediseñadas, una vasta biblioteca de elementos gráficos (imágenes, iconos, formas), herramientas de edición sencillas y la posibilidad de colaborar en tiempo real. Es ideal para:</p>
+        <ul>
+            <li>Crear contenido atractivo para redes sociales.</li>
+            <li>Diseñar presentaciones impactantes.</li>
+            <li>Elaborar materiales de marketing como folletos y carteles.</li>
+            <li>Personalizar invitaciones y tarjetas.</li>
+            <li>Crear gráficos e infografías visualmente atractivas.</li>
+        </ul>
+        <h2>¿Cómo lo puedo utilizar?</h2>
+        <p>Utilizar Canva es muy sencillo. Aquí te mostramos algunos pasos básicos:</p>
+        <ol>
+            <li><strong>Regístrate o inicia sesión:</strong> Accede a <a href="https://www.canva.com/" target="_blank">canva.com</a> y crea una cuenta gratuita o inicia sesión si ya tienes una.</li>
+            <li><strong>Elige un tipo de diseño:</strong> En la página de inicio, selecciona el tipo de diseño que necesitas (ej. presentación, post para Instagram, logo). También puedes usar la barra de búsqueda.</li>
+            <li><strong>Explora las plantillas:</strong> Canva ofrece miles de plantillas profesionales. Navega por las categorías o busca plantillas específicas para tu tema.</li>
+            <li><strong>Personaliza tu diseño:</strong> Haz clic en una plantilla para empezar a editar. Puedes cambiar el texto, las imágenes, los colores, las fuentes, añadir elementos de la biblioteca, subir tus propias fotos y mucho más.</li>
+        </ol>
+        <div class="uso-imagenes">
+            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-uso1.png" alt="Paso 1 de uso de Canva: Elegir plantilla">
+            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-uso2.png" alt="Paso 2 de uso de Canva: Editar elementos">
+            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-uso3.png" alt="Paso 3 de uso de Canva: Añadir elementos">
+        </div>
+        <p style="font-size: 0.9em; color: #ccc; margin-top: 20px;">(Las imágenes arriba son ejemplos. Asegúrate de que `canva-uso1.png`, `canva-uso2.png` y `canva-uso3.png` existan y estén en la raíz de tu repositorio)</p>
+        <h2>¿Quién lo creó?</h2>
+        <p>Canva fue fundado en 2013 en Sídney, Australia, por Melanie Perkins, Cliff Obrecht y Cameron Adams.</p>
+        <h2>¿Cómo ha ayudado a la comunidad digital?</h2>
+        <p>Canva ha democratizado el diseño gráfico, haciéndolo accesible a millones de personas sin necesidad de software complejo ni conocimientos técnicos avanzados. Ha empoderado a emprendedores, pequeñas empresas, educadores, estudiantes y creadores de contenido para comunicar sus ideas de forma visualmente atractiva y profesional. Su modelo gratuito con amplias funcionalidades ha sido clave en su adopción masiva, fomentando la creatividad y la expresión visual en la era digital.</p>
+        <h2>¿Qué se diferencia de las demás aplicaciones?</h2>
+        <p>Canva se diferencia de otras aplicaciones de diseño gráfico por:</p>
+        <ul>
+            <li><strong>Su interfaz intuitiva y fácil de usar:</strong> Diseñada específicamente para principiantes y usuarios no profesionales del diseño.</li>
+            <li><strong>Su vasta biblioteca de plantillas y elementos:</strong> Una colección masiva y constantemente actualizada de plantillas, fotos, iconos, ilustraciones y fuentes.</li>
+            <li><strong>Su modelo de negocio "freemium":</strong> Ofrece una gran cantidad de funciones de forma gratuita, con opciones de pago para elementos y funcionalidades premium (Canva Pro).</li>
+            <li><strong>Su enfoque colaborativo:</strong> Permite trabajar en diseños con otras personas en tiempo real, facilitando proyectos en equipo.</li>
+            <li><strong>Su integración con otras plataformas:</strong> Facilita la publicación y el uso de diseños directamente en redes sociales, sitios web y otras herramientas.</li>
+            <li><strong>Su accesibilidad basada en la web:</strong> No requiere instalación de software pesado y se puede usar desde cualquier dispositivo con conexión a internet (computadora, tablet, smartphone).</li>
+        </ul>
         <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-ejemplo.png" alt="Ejemplo de Canva">
         <video controls>
             <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-video.mp4" type="video/mp4">
