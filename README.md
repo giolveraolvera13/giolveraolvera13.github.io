@@ -1,127 +1,339 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Venezuela - Cultura, Gastronomía, Lugares y Naturaleza</title>
-  <style>
-    body {
-      background-image: url('https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/bandera.jpg');
-      background-size: cover;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0 20px;
-    }
-    header {
-      background-color: rgba(0,0,0,0.7);
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-    }
-    header img {
-      width: 40px;
-      margin-right: 15px;
-      cursor: pointer;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      background-color: rgba(0,0,0,0.6);
-      padding: 20px;
-      margin-top: 15px;
-      border-radius: 8px;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    section h2 {
-      border-bottom: 2px solid white;
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-    }
-    section img {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: rgba(0,0,0,0.7);
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Proyecto de Cultura Digital II</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        /* Navigation Styles */
+        .navbar {
+            background-color: #002855;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #00e0ff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar a:hover, .navbar a.active {
+            background-color: #00e0ff;
+            color: #002855;
+        }
+        /* Section Base Styles */
+        .content-section {
+            display: none;
+            padding: 40px 20px;
+            min-height: calc(100vh - 60px);
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .content-section.active {
+            opacity: 1;
+        }
+        .content-section h1, .content-section h2 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .content-section p {
+            margin: 10px 0;
+            line-height: 1.6;
+            max-width: 900px;
+            padding: 0 15px;
+        }
+        .content-section img, .content-section video {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            object-fit: contain;
+        }
+        /* Portada Section */
+        #portada {
+            background-color: #002855;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+        #portada h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #00e0ff;
+        }
+        #portada p {
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+        #portada .boton {
+            margin-top: 50px;
+        }
+        #portada .boton a {
+            text-decoration: none;
+            background-color: #00e0ff;
+            color: #002855;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        #portada .boton a:hover {
+            background-color: #00b4cc;
+        }
+        /* Aplicaciones Tecnológicas Section */
+        #aplicaciones {
+            background-color: #003366;
+        }
+        #aplicaciones h1 {
+            color: white;
+            font-size: 2.8em;
+        }
+        #aplicaciones p, #aplicaciones ul {
+            color: #cc66cc;
+            font-size: 1.3em;
+        }
+        #aplicaciones .logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        #aplicaciones .logos img {
+            width: 180px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        /* Canva Section */
+        #canva {
+            background: linear-gradient(to bottom right, #1a237e, #8e24aa);
+        }
+        #canva h1 {
+            font-size: 2.5em;
+            color: #00bcd4;
+        }
+        #canva h2 {
+            font-size: 2em;
+            color: #00bcd4;
+        }
+        /* Mentimeter Section */
+        #mentimeter {
+            background-color: #939393;
+        }
+        #mentimeter h1 {
+            font-size: 2.5em;
+            color: white;
+        }
+        #mentimeter h2 {
+            font-size: 2em;
+            color: white;
+        }
+        /* Genially Section */
+        #genially {
+            /* Ruta de fondo, asegurando que logo-genially.png esté en la raíz del repositorio */
+            background-image: url("https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-genially.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        #genially h1 {
+            color: #00b4d8;
+            font-size: 2.5em;
+        }
+        #genially h2 {
+            color: #00d6f7;
+            font-size: 2em;
+        }
+        #genially p {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 10px auto;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #portada h1 {
+                font-size: 2em;
+            }
+            #portada p {
+                font-size: 1em;
+            }
+            #aplicaciones .logos img {
+                width: 120px;
+            }
+            .content-section {
+                padding: 20px 15px;
+            }
+            .navbar a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            h1 {
+                font-size: 2em !important;
+            }
+            h2 {
+                font-size: 1.5em !important;
+            }
+        }
+        @media (max-width: 480px) {
+            #portada h1 {
+                font-size: 1.5em;
+            }
+            #portada p {
+                font-size: 0.9em;
+            }
+            .navbar a {
+                display: block;
+                margin: 5px auto;
+                width: fit-content;
+            }
+            #aplicaciones .logos {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/venezuela_paisaje.jpg" alt="Regresar" onclick="window.history.back()" />
-      Venezuela
-    </h1>
-    <nav>
-      <a href="#cultura">Cultura</a>
-      <a href="#gastronomia">Gastronomía</a>
-      <a href="#lugares">Lugares Turísticos</a>
-      <a href="#naturaleza">Naturaleza</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="cultura">
-      <h2>Cultura Venezolana</h2>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/baile_llanero.jpg" alt="Cultura Venezolana" />
-      <p>
-        La cultura venezolana es un rico mosaico de tradiciones, costumbres y expresiones artísticas que reflejan la diversidad de su gente y su historia. Desde las influencias indígenas originarias, pasando por la herencia española, hasta las aportaciones africanas y europeas, la identidad cultural de Venezuela se ha construido a lo largo de siglos de convivencia y mezcla de pueblos. La música tradicional, como el joropo, es uno de los pilares fundamentales de la cultura nacional, con su ritmo alegre y sus instrumentos típicos que animan festivales y celebraciones en todo el país. Además, la danza, el teatro y la literatura venezolana han sido manifestaciones vitales para expresar la realidad social, política y emocional de sus habitantes. La gastronomía, las festividades religiosas y populares, y las artesanías, como la elaboración de sombreros y tejidos, también forman parte esencial de esta riqueza cultural. En las ciudades y en el campo, la cultura venezolana se vive día a día a través de la familia, las tradiciones orales y los eventos comunitarios, que mantienen viva la memoria colectiva y el sentido de pertenencia. La pluralidad lingüística, con la presencia de lenguas indígenas, es otro aspecto relevante que contribuye a la diversidad cultural. En suma, la cultura de Venezuela es un reflejo de su historia compleja y de la creatividad de su pueblo, que sigue evolucionando y adaptándose en un mundo globalizado sin perder sus raíces profundas.
-      </p>
-    </section>
-    <section id="gastronomia">
-      <h2>Gastronomía Venezolana</h2>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/arepas.jpg" alt="Gastronomía Venezolana" />
-      <p>
-        La gastronomía venezolana es un deleite para los sentidos, caracterizada por su variedad y sabor que refleja la diversidad geográfica y cultural del país. Platos emblemáticos como las arepas, las hallacas, el pabellón criollo, las empanadas y el asado negro representan la fusión de ingredientes autóctonos con técnicas culinarias traídas por los colonizadores y adaptadas a lo largo del tiempo. La arepa, hecha de masa de maíz, es un símbolo nacional y se consume en múltiples variantes y preparaciones, ya sea rellena de queso, carne, pollo o vegetales. Las hallacas, típicas de la temporada navideña, reúnen una mezcla compleja de ingredientes dentro de una masa envuelta en hojas de plátano, reflejando la diversidad regional. Además, la gastronomía venezolana se enriquece con frutas tropicales como el mango, la guayaba y la parchita, y con una amplia variedad de platos a base de pescado y mariscos, especialmente en las regiones costeras. Las tradiciones culinarias no solo nutren el cuerpo sino que también fortalecen los lazos familiares y sociales, pues muchas recetas se transmiten de generación en generación. Los mercados y festivales gastronómicos permiten a los venezolanos y visitantes conocer la riqueza culinaria del país, mostrando además cómo la comida es parte fundamental de la identidad nacional.
-      </p>
-    </section>
-    <section id="lugares">
-      <h2>Lugares Turísticos de Venezuela</h2>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/morrocoy.jpg" alt="Lugares Turísticos de Venezuela" />
-      <p>
-        Venezuela cuenta con una amplia gama de lugares turísticos que cautivan a visitantes nacionales e internacionales gracias a su belleza natural, su historia y su cultura. Entre ellos, destacan el Salto Ángel, la cascada más alta del mundo, ubicada en el Parque Nacional Canaima, un sitio declarado Patrimonio de la Humanidad por la UNESCO. La Gran Sabana, con sus impresionantes tepuyes y paisajes únicos, ofrece experiencias de aventura y contacto con la naturaleza. Las playas del Caribe venezolano, como las de Los Roques y Morrocoy, son paradisíacas y conocidas por sus aguas cristalinas y arenas blancas, ideales para el ecoturismo y el buceo. Las ciudades coloniales como Coro y su casco histórico, Patrimonio Cultural, permiten al visitante explorar la arquitectura y la historia del país. Además, la ciudad de Mérida, con su teleférico, uno de los más largos y altos del mundo, es un centro de turismo de montaña y actividades al aire libre. Estos destinos, junto con muchos otros, hacen de Venezuela un país con un potencial turístico inmenso que combina naturaleza, cultura y aventura en cada rincón.
-      </p>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/salto_angel.jpg" alt="Salto Ángel" style="margin-top:20px;"/>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/tepuy_roraima.jpg" alt="Tepuy Roraima" style="margin-top:20px;"/>
-    </section>
-    <section id="naturaleza">
-      <h2>Naturaleza Venezolana</h2>
-      <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera13.github.io/main/venezuela_paisaje.jpg" alt="Naturaleza en Venezuela" />
-      <p>
-        La naturaleza venezolana es una de las más diversas y exuberantes del planeta, gracias a su ubicación geográfica y su variedad de ecosistemas. El país alberga selvas tropicales, montañas andinas, llanuras, desiertos, manglares, y extensas costas en el Caribe y el Atlántico. Esta riqueza biológica se refleja en su flora y fauna, con numerosas especies endémicas y protegidas, que habitan en parques nacionales y reservas naturales. La biodiversidad venezolana incluye desde el majestuoso jaguar y la guacamaya hasta plantas medicinales usadas por comunidades indígenas. Los ríos como el Orinoco son vitales para el equilibrio ambiental y para la vida de miles de comunidades. La conservación de estos espacios naturales es fundamental para mantener el equilibrio ecológico y el bienestar de futuras generaciones. Además, el contacto con la naturaleza es una fuente de inspiración y bienestar para los venezolanos, quienes disfrutan de actividades al aire libre como senderismo, avistamiento de aves y turismo ecológico. La naturaleza venezolana no solo es patrimonio nacional, sino también un legado invaluable para el mundo.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Creado por Giovanna Olvera</p>
-  </footer>
-
+    <div class="navbar">
+        <a href="#portada" class="nav-link active" data-section="portada">Inicio</a>
+        <a href="#aplicaciones" class="nav-link" data-section="aplicaciones">Aplicaciones</a>
+        <a href="#canva" class="nav-link" data-section="canva">Canva</a>
+        <a href="#mentimeter" class="nav-link" data-section="mentimeter">Mentimeter</a>
+        <a href="#genially" class="nav-link" data-section="genially">Genially</a>
+    </div>
+    <div id="portada" class="content-section active">
+        <h1>Final de Cultura Digital II</h1>
+        <p><strong>Nombre del alumno:</strong> GIOVANNA OLVERA OLVERA</p>
+        <p><strong>Nombre del docente:</strong> MARTINEZ PATATUCHI AHIEZER</p>
+        <p><strong>Nombre de la Institución:</strong> COLEGIO DE BACHILLERES DEL ESTADO DE QUERETARO<br>PLANTEL 1 SATÉLITE (COBAQ)</p>
+        <p><strong>Fecha:</strong> 16/JUNIO/2025</p>
+    </div>
+    <div id="aplicaciones" class="content-section">
+        <h1>Aplicaciones Tecnológicas para la Educación</h1>
+        <p>
+            Este proyecto tiene como objetivo mostrar el uso de tres poderosas herramientas tecnológicas que han revolucionado la forma de presentar información: Canva, Mentimeter y Genially.
+        </p>
+        <div class="logos">
+            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-canva.png" alt="Logo de Canva">
+            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-mentimeter.png" alt="Logo de Mentimeter">
+            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-genially.png" alt="Logo de Genially">
+        </div>
+    </div>
+    <div id="canva" class="content-section">
+        <h1>¿Qué es Canva?</h1>
+        <p>Canva es una plataforma de diseño gráfico en línea que permite crear contenidos visuales de manera sencilla. Desde presentaciones hasta carteles y posts para redes sociales.</p>
+        <h2>¿Para qué sirve?</h2>
+        <p>Permite a cualquier persona sin conocimientos de diseño crear material visual profesional con plantillas prediseñadas.</p>
+        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-ejemplo.png" alt="Ejemplo de Canva">
+        <video controls>
+            <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+    <div id="mentimeter" class="content-section">
+        <h1>¿Qué es Mentimeter?</h1>
+        <p>Mentimeter es una herramienta en línea que permite realizar presentaciones interactivas con encuestas, nubes de palabras, cuestionarios y más.</p>
+        <h2>¿Para qué sirve?</h2>
+        <p>Para interactuar con una audiencia en tiempo real y obtener retroalimentación inmediata.</p>
+        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/mentimeter-ejemplo.png" alt="Ejemplo de Mentimeter">
+        <video controls>
+            <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/mentimeter-video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+    <div id="genially" class="content-section">
+        <h1>¿Qué es Genially?</h1>
+        <p>
+            Genially es una plataforma que permite crear contenidos interactivos como presentaciones, infografías, posters, mapas, juegos y más.
+        </p>
+        <h2>¿Para qué sirve?</h2>
+        <p>
+            Comunica información de forma atractiva e interactiva para educación y marketing.
+        </p>
+        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/genially-ejemplo.png" alt="Presentación interactiva de Genially">
+        <video controls>
+            <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/genially-video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <h2>¿Quién lo creó?</h2>
+        <p>Fue creado en España en 2015 por un grupo de emprendedores liderados por Juan Rubio.</p>
+        <h2>¿Cómo ha ayudado?</h2>
+        <p>Revolucionó la educación visual y la forma de presentar contenidos digitales.</p>
+        <h2>Diferencias con otras apps</h2>
+        <p>Enfoque total en la interactividad con rutas, botones, animaciones y más.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            function showSection(sectionId) {
+                contentSections.forEach(section => {
+                    section.style.display = 'none';
+                    section.classList.remove('active');
+                });
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.style.display = 'flex';
+                    void targetSection.offsetWidth;
+                    targetSection.classList.add('active');
+                }
+            }
+            function setActiveLink(activeSectionId) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.section === activeSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSectionId = this.dataset.section;
+                    showSection(targetSectionId);
+                    setActiveLink(targetSectionId);
+                    history.pushState(null, '', `#${targetSectionId}`);
+                });
+            });
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && document.getElementById(initialHash)) {
+                showSection(initialHash);
+                setActiveLink(initialHash);
+            } else {
+                showSection('portada');
+                setActiveLink('portada');
+            }
+        });
+    </script>
 </body>
 </html>
