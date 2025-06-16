@@ -333,7 +333,7 @@
             <li><strong>Su integración con otras plataformas:</strong> Facilita la publicación y el uso de diseños directamente en redes sociales, sitios web y otras herramientas.</li>
             <li><strong>Su accesibilidad basada en la web:</strong> No requiere instalación de software pesado y se puede usar desde cualquier dispositivo con conexión a internet (computadora, tablet, smartphone).</li>
         </ul>
-        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-ejemplo.png" alt="Ejemplo de Canva">
+        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-uso.png" alt="Ejemplo de Canva">
         <video controls>
             <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-video.mp4" type="video/mp4">
             Tu navegador no soporta el video.
