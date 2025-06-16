@@ -168,7 +168,7 @@
         #canva a:hover {
             text-decoration: underline;
         }
-        /* Hemos eliminado el bloque .uso-imagenes ya que se quitarán las imágenes de uso */
+        /* Hemos eliminado el bloque .uso-imagenes y sus reglas de estilo asociadas */
         
         /* Mentimeter Section */
         #mentimeter {
@@ -250,10 +250,6 @@
                 flex-direction: column;
                 align-items: center;
             }
-            /* Eliminamos esta regla CSS ya que .uso-imagenes ya no existe */
-            /* #canva .uso-imagenes img {
-                max-width: 90%; 
-            } */
         }
     </style>
 </head>
@@ -318,7 +314,7 @@
             <li><strong>Su integración con otras plataformas:</strong> Facilita la publicación y el uso de diseños directamente en redes sociales, sitios web y otras herramientas.</li>
             <li><strong>Su accesibilidad basada en la web:</strong> No requiere instalación de software pesado y se puede usar desde cualquier dispositivo con conexión a internet (computadora, tablet, smartphone).</li>
         </ul>
-        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-uso.png" alt="Ejemplo de Canva">
+        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-ejemplo.png" alt="Ejemplo de Canva">
         <video controls>
             <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-video.mp4" type="video/mp4">
             Tu navegador no soporta el video.
@@ -368,7 +364,7 @@
                 const targetSection = document.getElementById(sectionId);
                 if (targetSection) {
                     targetSection.style.display = 'flex';
-                    void targetSection.offsetWidth;
+                    void targetSection.offsetWidth; // Trigger reflow to restart animation
                     targetSection.classList.add('active');
                 }
             }
@@ -389,6 +385,7 @@
                     history.pushState(null, '', `#${targetSectionId}`);
                 });
             });
+            // Handle initial load based on URL hash
             const initialHash = window.location.hash.substring(1);
             if (initialHash && document.getElementById(initialHash)) {
                 showSection(initialHash);
