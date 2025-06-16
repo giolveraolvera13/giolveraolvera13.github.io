@@ -4,7 +4,206 @@
     <meta charset="UTF-8">
     <title>Proyecto de Cultura Digital II</title>
     <style>
-        /* Fondo general y borde LED animado */body{background-color:black;color:white;font-family:Arial,sans-serif;padding:20px;margin:0;min-height:100vh;border:10px solid;border-image:linear-gradient(270deg,red,orange,yellow,green,blue,indigo,violet,red) 1;animation:border-anim 10s linear infinite;box-sizing:border-box;padding-top:70px}/* Títulos */h1,h2{text-align:center;margin:20px 0}/* Párrafos */p{font-size:18px;line-height:1.7;margin:20px auto;max-width:900px;color:#ccc}/* Listas */ul{list-style-type:square;color:cyan;font-size:18px;margin:20px auto;text-align:left;max-width:900px;padding-left:40px}ol{list-style-type:decimal;color:cyan;font-size:18px;margin:20px auto;text-align:left;max-width:900px;padding-left:40px}ul li,ol li{margin:10px 0}/* Enlaces */a{color:#0ff;text-decoration:none;transition:color .3s}a:hover{color:#fff;text-shadow:0 0 5px #0ff}/* Imágenes con borde LED */img{max-width:90%;height:auto;display:block;margin:30px auto;border:6px solid;border-image:linear-gradient(270deg,red,yellow,lime,cyan,blue,violet,red) 1;animation:border-anim 8s linear infinite;border-radius:12px}/* Videos con borde LED */video{display:block;margin:30px auto;max-width:90%;border:6px solid;border-image:linear-gradient(270deg,cyan,magenta,yellow,cyan) 1;animation:border-anim 10s linear infinite;border-radius:12px}/* Animación LED para bordes */@keyframes border-anim{0%{border-image-source:linear-gradient(270deg,red,orange,yellow,green,blue,indigo,violet,red)}25%{border-image-source:linear-gradient(270deg,blue,cyan,green,lime,yellow,red,violet,blue)}50%{border-image-source:linear-gradient(270deg,violet,indigo,blue,green,yellow,orange,red,violet)}75%{border-image-source:linear-gradient(270deg,lime,yellow,orange,red,violet,blue,cyan,lime)}100%{border-image-source:linear-gradient(270deg,red,orange,yellow,green,blue,indigo,violet,red)}}/* Menú de navegación fijo con estilo LED */.navbar{position:fixed;top:0;left:0;width:100%;background:black;border-bottom:4px solid;border-image:linear-gradient(270deg,red,yellow,lime,cyan,blue,violet,red) 1;animation:border-anim 8s linear infinite;z-index:1000;padding:10px 0;text-align:center}.navbar a{color:white;text-decoration:none;margin:0 20px;font-size:18px;padding:8px 16px;border-radius:10px;transition:.3s;border:2px solid transparent}.navbar a:hover,.navbar a.active{background-color:#111;border:2px solid cyan;text-shadow:0 0 10px cyan}/* Section Base Styles - Necesitamos ajustar estos para que funcionen con el nuevo body y navbar */.content-section{display:none;padding:40px 20px;min-height:calc(100vh - 70px - 20px);box-sizing:border-box;color:white;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease-in-out;opacity:0}.content-section.active{opacity:1;display:flex}/* Estilos específicos de secciones - adaptados para el nuevo tema oscuro */#portada{background-color:rgba(0,0,0,.7);min-height:calc(100vh - 70px - 20px)}#portada h1{color:#00e0ff}#portada p{color:#eee}#portada .boton a{background-color:#0ff;color:black;box-shadow:0 0 15px #0ff}#portada .boton a:hover{background-color:#00cccc;box-shadow:0 0 20px #0ff}#aplicaciones{background-color:rgba(0,0,0,.8)}#aplicaciones h1{color:white}#aplicaciones p,#aplicaciones ul{color:#ccc}#aplicaciones .logos img{box-shadow:0 0 25px rgba(0,255,255,.7)}#canva{background:linear-gradient(to bottom right,rgba(26,35,126,.8),rgba(142,36,170,.8));color:white}#canva h1{color:#b3e5fc}#canva h2{color:#ce93d8}#canva a{color:#0ff}#canva a:hover{text-shadow:0 0 8px #0ff}#mentimeter{background-color:rgba(147,147,147,.7)}#mentimeter h1,#mentimeter h2{color:white}#genially{background-image:url("https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-genially.png");background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;text-shadow:1px 1px 3px rgba(0,0,0,.7);background-color:rgba(0,0,0,.6);background-blend-mode:darken}#genially h1{color:#00b4d8}#genially h2{color:#00d6f7}#genially p{background-color:rgba(0,0,0,.7);padding:15px;border-radius:8px;max-width:900px;margin:10px auto;color:#ccc}/* Responsive Design */@media (max-width:768px){body{padding:10px;padding-top:60px;border-width:5px}.navbar{padding:5px 0}.navbar a{margin:0 10px;font-size:16px;padding:6px 12px}h1{font-size:2em !important}h2{font-size:1.5em !important}p,ul,ol{font-size:16px;padding:0 10px;margin:15px auto}img,video{margin:20px auto;border-width:4px}.content-section{padding:20px 10px;min-height:calc(100vh - 60px - 10px)}#portada h1{font-size:2em}}@media (max-width:480px){#portada h1{font-size:1.5em}#portada p{font-size:.9em}.navbar a{display:block;margin:5px auto;width:fit-content}#aplicaciones .logos{flex-direction:column;align-items:center}}
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        /* Navigation Styles */
+        .navbar {
+            background-color: #002855;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #00e0ff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: bold;
+        }
+        .navbar a:hover, .navbar a.active {
+            background-color: #00e0ff;
+            color: #002855;
+        }
+        /* Section Base Styles */
+        .content-section {
+            display: none; /* Hidden by default */
+            padding: 40px;
+            min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .content-section h1, .content-section h2 {
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .content-section img, .content-section video {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        /* Portada Section */
+        #portada {
+            background-color: #002855;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+        #portada h1 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: #00e0ff;
+        }
+        #portada p {
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+        #portada .boton {
+            margin-top: 50px;
+        }
+        #portada .boton a {
+            text-decoration: none;
+            background-color: #00e0ff;
+            color: #002855;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+            font-size: 1.1em;
+        }
+        #portada .boton a:hover {
+            background-color: #00b4cc;
+        }
+        /* Aplicaciones Tecnológicas Section */
+        #aplicaciones {
+            background-color: #003366;
+        }
+        #aplicaciones h1 {
+            color: white;
+            font-size: 2.8em;
+        }
+        #aplicaciones p, #aplicaciones ul {
+            color: #cc66cc;
+            font-size: 1.3em;
+            max-width: 800px;
+        }
+        #aplicaciones .logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap; /* Allow logos to wrap */
+        }
+        #aplicaciones .logos img {
+            width: 180px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        /* Canva Section */
+        #canva {
+            background: linear-gradient(to bottom right, #1a237e, #8e24aa);
+        }
+        #canva h1 {
+            font-size: 2.5em;
+            color: #00bcd4;
+        }
+        #canva h2 {
+            font-size: 2em;
+            color: #00bcd4;
+        }
+        /* Mentimeter Section */
+        #mentimeter {
+            background-color: #939393;
+        }
+        #mentimeter h1 {
+            font-size: 2.5em;
+            color: white;
+        }
+        #mentimeter h2 {
+            font-size: 2em;
+            color: white;
+        }
+        /* Genially Section */
+        #genially {
+            background-image: url("https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/logo-genially.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Make text more readable on background image */
+        }
+        #genially h1 {
+            color: #00b4d8;
+            font-size: 2.5em;
+        }
+        #genially h2 {
+            color: #00d6f7;
+            font-size: 2em;
+        }
+        #genially p {
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent background for readability */
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 10px auto;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #portada h1 {
+                font-size: 2em;
+            }
+            #portada p {
+                font-size: 1em;
+            }
+            #aplicaciones .logos img {
+                width: 120px;
+            }
+            .content-section {
+                padding: 20px;
+            }
+            .navbar a {
+                padding: 8px 15px;
+                margin: 0 2px;
+            }
+        }
+        @media (max-width: 480px) {
+            #portada h1 {
+                font-size: 1.5em;
+            }
+            #portada p {
+                font-size: 0.9em;
+            }
+            .navbar a {
+                display: block;
+                margin: 5px auto;
+                width: fit-content;
+            }
+            #aplicaciones .logos {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -15,7 +214,7 @@
         <a href="#mentimeter" class="nav-link" data-section="mentimeter">Mentimeter</a>
         <a href="#genially" class="nav-link" data-section="genially">Genially</a>
     </div>
-    <div id="portada" class="content-section active">
+    <div id="portada" class="content-section" style="display: flex;">
         <h1>Final de Cultura Digital II</h1>
         <p><strong>Nombre del alumno:</strong> GIOVANNA OLVERA OLVERA</p>
         <p><strong>Nombre del docente:</strong> MARTINEZ PATATUCHI AHIEZER</p>
@@ -28,49 +227,19 @@
             Este proyecto tiene como objetivo mostrar el uso de tres poderosas herramientas tecnológicas que han revolucionado la forma de presentar información: Canva, Mentimeter y Genially.
         </p>
         <div class="logos">
-            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-canva.png" alt="Logo de Canva">
-            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-mentimeter.png" alt="Logo de Mentimeter">
-            <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/logo-genially.png" alt="Logo de Genially">
+            <img src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/logo-canva.png" alt="Logo de Canva">
+            <img src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/logo-mentimeter.png" alt="Logo de Mentimeter">
+            <img src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/logo-genially.png" alt="Logo de Genially">
         </div>
     </div>
     <div id="canva" class="content-section">
         <h1>¿Qué es Canva?</h1>
-        <p>Canva es una plataforma de diseño gráfico en línea, intuitiva y fácil de usar, que permite a personas de todos los niveles de habilidad crear una amplia variedad de diseños visuales. Desde presentaciones y documentos hasta gráficos para redes sociales, carteles, invitaciones y mucho más.</p>
+        <p>Canva es una plataforma de diseño gráfico en línea que permite crear contenidos visuales de manera sencilla. Desde presentaciones hasta carteles y posts para redes sociales.</p>
         <h2>¿Para qué sirve?</h2>
-        <p>Canva sirve para simplificar el proceso de diseño gráfico. Ofrece miles de plantillas prediseñadas, una vasta biblioteca de elementos gráficos (imágenes, iconos, formas), herramientas de edición sencillas y la posibilidad de colaborar en tiempo real. Es ideal para:</p>
-        <ul>
-            <li>Crear contenido atractivo para redes sociales.</li>
-            <li>Diseñar presentaciones impactantes.</li>
-            <li>Elaborar materiales de marketing como folletos y carteles.</li>
-            <li>Personalizar invitaciones y tarjetas.</li>
-            <li>Crear gráficos e infografías visualmente atractivas.</li>
-        </ul>
-        <h2>¿Cómo lo puedo utilizar?</h2>
-        <p>Utilizar Canva es muy sencillo. Aquí te mostramos algunos pasos básicos:</p>
-        <ol>
-            <li><strong>Regístrate o inicia sesión:</strong> Accede a <a href="https://www.canva.com/" target="_blank">canva.com</a> y crea una cuenta gratuita o inicia sesión si ya tienes una.</li>
-            <li><strong>Elige un tipo de diseño:</strong> En la página de inicio, selecciona el tipo de diseño que necesitas (ej. presentación, post para Instagram, logo). También puedes usar la barra de búsqueda.</li>
-            <li><strong>Explora las plantillas:</strong> Canva ofrece miles de plantillas profesionales. Navega por las categorías o busca plantillas específicas para tu tema.</li>
-            <li><strong>Personaliza tu diseño:</strong> Haz clic en una plantilla para empezar a editar. Puedes cambiar el texto, las imágenes, los colores, las fuentes, añadir elementos de la biblioteca, subir tus propias fotos y mucho más.</li>
-        </ol>
-        <p style="font-size: 0.9em; color: #ccc; margin-top: 20px;">(Las descripciones de uso se proporcionan en el texto.)</p>
-        <h2>¿Quién lo creó?</h2>
-        <p>Canva fue fundado en 2013 en Sídney, Australia, por Melanie Perkins, Cliff Obrecht y Cameron Adams.</p>
-        <h2>¿Cómo ha ayudado a la comunidad digital?</h2>
-        <p>Canva ha democratizado el diseño gráfico, haciéndolo accesible a millones de personas sin necesidad de software complejo ni conocimientos técnicos avanzados. Ha empoderado a emprendedores, pequeñas empresas, educadores, estudiantes y creadores de contenido para comunicar sus ideas de forma visualmente atractiva y profesional. Su modelo gratuito con amplias funcionalidades ha sido clave en su adopción masiva, fomentando la creatividad y la expresión visual en la era digital.</p>
-        <h2>¿Qué se diferencia de las demás aplicaciones?</h2>
-        <p>Canva se diferencia de otras aplicaciones de diseño gráfico por:</p>
-        <ul>
-            <li><strong>Su interfaz intuitiva y fácil de usar:</strong> Diseñada específicamente para principiantes y usuarios no profesionales del diseño.</li>
-            <li><strong>Su vasta biblioteca de plantillas y elementos:</strong> Una colección masiva y constantemente actualizada de plantillas, fotos, iconos, ilustraciones y fuentes.</li>
-            <li><strong>Su modelo de negocio "freemium":</strong> Ofrece una gran cantidad de funciones de forma gratuita, con opciones de pago para elementos y funcionalidades premium (Canva Pro).</li>
-            <li><strong>Su enfoque colaborativo:</strong> Permite trabajar en diseños con otras personas en tiempo real, facilitando proyectos en equipo.</li>
-            <li><strong>Su integración con otras plataformas:</strong> Facilita la publicación y el uso de diseños directamente en redes sociales, sitios web y otras herramientas.</li>
-            <li><strong>Su accesibilidad basada en la web:</strong> No requiere instalación de software pesado y se puede usar desde cualquier dispositivo con conexión a internet (computadora, tablet, smartphone).</li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-ejemplo.png" alt="Ejemplo de Canva">
+        <p>Permite a cualquier persona sin conocimientos de diseño crear material visual profesional con plantillas prediseñadas.</p>
+        <img src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/canva-ejemplo.png" alt="Ejemplo de Canva">
         <video controls>
-            <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/canva-video.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/canva-video.mp4" type="video/mp4">
             Tu navegador no soporta el video.
         </video>
     </div>
@@ -79,9 +248,9 @@
         <p>Mentimeter es una herramienta en línea que permite realizar presentaciones interactivas con encuestas, nubes de palabras, cuestionarios y más.</p>
         <h2>¿Para qué sirve?</h2>
         <p>Para interactuar con una audiencia en tiempo real y obtener retroalimentación inmediata.</p>
-        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/mentimeter-ejemplo.png" alt="Ejemplo de Mentimeter">
+        <img src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/mentimeter-ejemplo.png" alt="Ejemplo de Mentimeter">
         <video controls>
-            <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/mentimeter-video.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/mentimeter-video.mp4" type="video/mp4">
             Tu navegador no soporta el video.
         </video>
     </div>
@@ -94,9 +263,9 @@
         <p>
             Comunica información de forma atractiva e interactiva para educación y marketing.
         </p>
-        <img src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/genially-ejemplo.png" alt="Presentación interactiva de Genially">
+        <img src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/genially-ejemplo.png" alt="Presentación interactiva de Genially">
         <video controls>
-            <source src="https://raw.githubusercontent.com/giolveraolvera13/giolveraolvera1311/main/genially-video.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/giolveraolvera1311/giolveraolvera1311/main/imagenes/genially-video.mp4" type="video/mp4">
             Tu navegador no soporta el video.
         </video>
         <h2>¿Quién lo creó?</h2>
@@ -113,14 +282,8 @@
             function showSection(sectionId) {
                 contentSections.forEach(section => {
                     section.style.display = 'none';
-                    section.classList.remove('active');
                 });
-                const targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    targetSection.style.display = 'flex';
-                    void targetSection.offsetWidth; // Trigger reflow to restart animation
-                    targetSection.classList.add('active');
-                }
+                document.getElementById(sectionId).style.display = 'flex'; // Use flex for centering content
             }
             function setActiveLink(activeSectionId) {
                 navLinks.forEach(link => {
@@ -130,23 +293,23 @@
                     }
                 });
             }
-
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetSectionId = this.dataset.section;
                     showSection(targetSectionId);
                     setActiveLink(targetSectionId);
+                    // Update URL hash without page reload for direct linking
                     history.pushState(null, '', `#${targetSectionId}`);
                 });
             });
-
             // Handle initial load based on URL hash
             const initialHash = window.location.hash.substring(1);
             if (initialHash && document.getElementById(initialHash)) {
                 showSection(initialHash);
                 setActiveLink(initialHash);
             } else {
+                // Default to 'portada' if no hash or invalid hash
                 showSection('portada');
                 setActiveLink('portada');
             }
